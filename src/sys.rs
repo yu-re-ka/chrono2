@@ -16,7 +16,7 @@
 
 use std::time::{SystemTime, UNIX_EPOCH};
 
-#[cfg(any(target_arch = "wasm32", target_env = "sgx"))]
+#[cfg(all(not(unix), not(windows)))]
 #[path = "sys/stub.rs"]
 mod inner;
 
