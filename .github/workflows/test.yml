@@ -97,7 +97,9 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          target: wasm32-unknown-unknown
+          target:
+            - wasm32-unknown-unknown
+            - wasm32-unknown-emscripten
           override: true
 
       - name: Install node
